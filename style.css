@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 384px;
+  background: #EFF1FF;
+
+  margin: auto;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+header {
+  position: relative;
+  background: #8E9AAF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 384px;
+  height: 279px;
+
+  margin: 0 auto;
+}
+
+header img {
+  margin-top: 3.2rem;
+  margin-bottom: 4rem;
+
+  object-fit: cover;
+}
+
+
+header .line {
+  position: absolute;
+  width: 384px;
+  height: 49px;
+  left: 0px;
+  top: 201px;
+
+  background: #CBC0D3;
+  z-index: 1;
+}
+
+header h1 {
+  letter-spacing: 0.05em;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+  color: #FFFFFF;
+
+  font-size: 4rem;
+  line-height: 3.4rem;
+
+  font-family: 'Staatliches';
+  font-weight: 400;
+
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+}
+
+main {
+  position: relative;
+  width: 320px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  margin: 0 auto;
+}
+
+main .paragraph {
+  font-family: 'Palanquin', sans-serif;
+  margin-top: 14px;
+  margin-bottom: 63px;
+  color: #23053A;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  font-size: 2.0rem;
+  line-height: 1.5rem;
+}
+
+.card {
+  position: relative;
+
+  animation: up 700ms 300ms backwards;
+}
+.card img {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 20px;
+
+  object-fit: cover;
+  transition: all 700ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+
+  filter: brightness(0.8);
+}
+
+.card p {
+  position: absolute;
+  top: 16px;
+  right: 12px;
+  background: #FEEAFA;
+  border-radius: 20px;
+
+  width: 112px;
+  height: 35px;
+
+  animation: down 700ms 300ms backwards;
+}
+
+.card p span {
+  font-family: 'Staatliches', sans-serif;
+  color: #4A4E69;
+
+  letter-spacing: 0.05em;
+
+  font-size: 2.0rem;
+  line-height: 3.4rem;
+
+  display: flex;
+  justify-content: center;
+
+  text-transform: uppercase;
+  text-align: center;
+
+}
+
+footer {
+  margin: 0 auto;
+  position: absolute;
+
+  bottom: 2.5rem;
+  left: 320px;
+
+  color: #4A4E69;
+
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (min-width: 930px) {
+  .container {
+    width: 128.0rem;
+    height: 72rem;
+    background: #FFFFFF;
+    margin: 0;
+
+    display: flex;
+  }
+
+  header {
+    width: 377px;
+    height: 72rem;
+
+    margin: 0;
+  }
+
+  header .line {
+    width: 377px;
+    height: 70px;
+  }
+
+  header h1 {
+    margin-top: 2rem;
+  }
+
+  header p {
+    margin: 7.2rem 4.8rem auto 5.4rem;
+    width: 275px;
+
+    font-size: 1.6rem;
+    line-height: 2.0rem;
+
+    text-align: center;
+
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  main {
+    width: 109.2rem;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3.2rem;
+
+    grid-template-areas:
+      'D F H'
+      'E F I'
+      'E G I';
+
+    margin-bottom: 5rem;
+
+    padding: 6.4rem 8.1rem 12.4rem 9.8rem;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  main div:nth-child(1) {
+    grid-area: D;
+  }
+
+  main div:nth-child(2) {
+    grid-area: E;
+  }
+
+  main div:nth-child(3) {
+    grid-area: F;
+  }
+
+  main div:nth-child(4) {
+    grid-area: G;
+  }
+
+  main div:nth-child(5) {
+    grid-area: H;
+  }
+
+  main div:nth-child(6) {
+    grid-area: I;
+  }
+
+
+  main .paragraph {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+
+
+@media (max-width: 929px) {
+  main .paragraph {
+    font-family: 'Palanquin', sans-serif;
+    margin-top: 14px;
+    margin-bottom: 63px;
+    color: #23053A;
+  
+    display: flex;
+    align-items: center;
+    text-align: center;
+  
+    font-size: 2.0rem;
+    line-height: 1.5rem;
+  }
+
+  header .subtitle {
+    opacity: 0;
+  }
+
+  footer {
+    opacity: 0;
+  }
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
